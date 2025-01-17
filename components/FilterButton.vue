@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="border-gray-800 border-2 px-2 py-1 hover:bg-black hover:text-white hover:font-semibold"
+      class="py-1 hover:bg-indigo-600 shadow-md hover:text-white rounded-md px-2"
     >
       <button class="capitalize">{{ categoryTitle }}</button>
     </div>

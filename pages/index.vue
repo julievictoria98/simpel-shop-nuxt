@@ -1,13 +1,11 @@
-<template>
-  <div>
-    <h1>Home</h1>
-    <p class="bg-red-500 text-white p-4">
-      My name is Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Quaerat officiis impedit repudiandae ut veniam, perspiciatis molestias
-      animi facere nemo repellendus, eaque id reprehenderit nobis ad atque nihil
-      praesentium dolores assumenda.
-    </p>
-  </div>
-</template>
+<script setup>
+const colors = useAvailableColors();
+</script>
 
-<script setup></script>
+<template>
+  <ul>
+    <li v-for="color in colors" :key="color">
+      {{ color }}
+    </li>
+  </ul>
+</template>

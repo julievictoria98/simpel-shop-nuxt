@@ -1,5 +1,5 @@
 <template>
-  <div class="flex gap-6 mx-12">
+  <div class="flex gap-12 mx-12">
     <FilterButton v-for="c in categories" :key="c" :categoryTitle="c" />
   </div>
 </template>
