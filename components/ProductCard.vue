@@ -1,3 +1,21 @@
+<script setup lang="ts">
+import { useBasketStore } from "~/stores/basket";
+
+const basketStore = useBasketStore();
+
+// Function to add an item
+const addItemToBasket = (product) => {
+  basketStore.addItem({
+    id: product.id, // Use the existing ID from the product
+    title: product.title,
+    price: product.price,
+    image: product.image,
+  });
+  console.log("Basket:", basketStore.basketItems);
+};
+const { product } = defineProps(["product"]);
+</script>
+
 <template>
   <div>
     <NuxtLink :to="`/products/${product.id}`">
@@ -21,18 +39,3 @@
     </NuxtLink>
   </div>
 </template>
-
-<script setup>
-const { product } = defineProps(["product"]);
-
-const basket = useState("basket", () => []);
-
-const addItemToBasket = (item) => {
-  basket.value.push({
-    title: item.title,
-    price: item.price,
-    img: item.image,
-  });
-  console.log(basket.value);
-};
-</script>

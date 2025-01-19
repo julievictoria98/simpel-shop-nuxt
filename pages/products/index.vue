@@ -17,11 +17,12 @@
   </div>
 </template>
 
-<script setup>
-const { pending, data: products } = useLazyFetch(
-  "https://fakestoreapi.com/products",
-  {
-    lazy: true,
-  }
+<script setup lang="ts">
+// import { useBasket } from "~/composables/useBasket";
+// const basketItems = useBasket();
+// console.log("index i product:", basketItems.value);
+
+const { pending, data: products } = useFetch(
+  "https://fakestoreapi.com/products"
 );
 </script>
